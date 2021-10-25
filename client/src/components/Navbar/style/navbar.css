@@ -62,4 +62,58 @@
 .nav-container .search-bar .search-form .input-search:focus {
   outline: 2px solid #9988fc;
 }
+
+@media (max-width: 474px) {
+  .nav-container .search-bar .search-form {
+    display: none;
+  }
+  .nav-container .search-bar .search-icon {
+    cursor: pointer;
+  }
+}
+
+.nav-container .logout-button-container {
+  width: 15%;
+  margin-right: 20px;
+}
+
+.nav-container .logout-button-container .logout-button {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: #7c4dff;
+  outline: 2px solid #5213ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-container .logout-button-container .logout-button:hover {
+  border: 2px solid white;
+}
+
+.nav-container .logout-button-container .logout-button:focus {
+  outline: 2px solid #5213ff;
+}
+
+.nav-container .logout-button-container .logout-button-sing {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: #4dffa6;
+  outline: 2px solid #00cc66;
+  color: #0e0e0e;
+  cursor: pointer;
+}
+
+.nav-container .logout-button-container .logout-button-sing:hover {
+  border: 2px solid white;
+}
+
+.nav-container .logout-button-container .logout-button-sing:focus {
+  outline: 2px solid #00cc66;
+}
 /*# sourceMappingURL=navbar.css.map */

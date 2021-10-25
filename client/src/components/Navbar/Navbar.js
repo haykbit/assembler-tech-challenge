@@ -21,6 +21,13 @@ function Navbar() {
             />
           </form>
         </section>
+        <section className="logout-button-container">
+          {true ? (
+            <button className="logout-button">Log Out</button>
+          ) : (
+            <button className="logout-button-sing">Sing In</button>
+          )}
+        </section>
       </div>
     </>
   );

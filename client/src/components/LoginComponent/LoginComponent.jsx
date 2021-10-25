@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import image from "../../assets/images/shibadog.jpeg";
+import google from "../../assets/icons/google.png";
+import fondo from "../../assets/images/fondo.png";
+
 import "./style/logincomponent.scss";
 
 function LoginComponent() {
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
-  const [recoverPass, setRecoverPass] = useState({ recover: false });
   const { email, password } = loginForm;
 
   const handleChange = (event) => {
@@ -13,22 +15,20 @@ function LoginComponent() {
   };
   const handleLoginWithGoogle = async () => {};
 
-  const handleLoginWithEmailAndPassword = (event) => {
-    event.preventDefault();
-  };
+  const handleLoginWithEmailAndPassword = (event) => {};
 
-  const handleRecover = (event) => {
-    setRecoverPass({ recover: true });
-  };
-
-  const recoverOff = () => {
-    setRecoverPass({ recover: false });
-  };
   return (
-    <div className="login-container">
+    <div
+      className="login-container"
+      style={{
+        backgroundImage: `url(${fondo})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <section className="login-form-container">
         <form className="login-form">
-          <h2>Login</h2>
+          <h2>Hello! 👋</h2>
           <input
             placeholder="Email"
             value={email}
@@ -42,20 +42,24 @@ function LoginComponent() {
             name="password"
             onChange={handleChange}
           />
-          <button className="login-btn">Login</button>
+          <div className="button-center">
+            <button className="login-btn">Login</button>
+          </div>
         </form>
 
         <h3>Or</h3>
-        <button className="login-gl-btn" onClick={handleLoginWithGoogle}>
-          {/* <img src={google} alt="" /> */}
-          Login with Google
-        </button>
-        <Link to="/register" className="registerLink">
-          <button className="register-btn">
-            {/* <img src={gmail} alt="" /> */}
-            Register
+        <div className="buttons-container">
+          <button className="login-gl-btn" onClick={handleLoginWithGoogle}>
+            <img src={google} alt="" className="google-image" />
+            Login with Google
           </button>
-        </Link>
+          <Link to="/register" className="registerLink">
+            <button className="register-btn">
+              {/* <img src={gmail} alt="" /> */}
+              Register
+            </button>
+          </Link>
+        </div>
       </section>
     </div>
   );
