@@ -15,6 +15,7 @@
 
 .nav-container .logo-icon {
   margin-left: 20px;
+  width: 100%;
 }
 
 .nav-container .logo-icon .logo-image {
@@ -23,7 +24,7 @@
 }
 
 .nav-container .search-bar {
-  width: 50%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
