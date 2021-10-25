@@ -1,0 +1,65 @@
+.nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 80px;
+  background-color: whitesmoke;
+}
+
+.nav-container .logo-icon {
+  margin-left: 20px;
+  width: 100%;
+}
+
+.nav-container .logo-icon .logo-image {
+  width: 80px;
+  height: 50px;
+}
+
+.nav-container .search-bar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.nav-container .search-bar .search-icon {
+  width: 30px;
+  height: 30px;
+  color: #000;
+}
+
+.nav-container .search-bar .search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-container .search-bar .search-form .input-search {
+  width: 250px;
+  margin-left: 10px;
+  height: 23px;
+  border: none;
+  padding: 5px;
+  outline: 2px solid #424242;
+  border-radius: 2px;
+}
+
+.nav-container .search-bar .search-form .input-search:focus {
+  outline: 2px solid #9988fc;
+}
+/*# sourceMappingURL=navbar.css.map */
