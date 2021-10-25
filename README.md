@@ -1,64 +1,70 @@
-`#challenge` `#48h` `#tech-interview` `#master-in-software-engineering`
+# Getting Started with Create React App
 
-# Assembler Tech Challenge <!-- omit in toc -->
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-> The objective of this technical challenge is to put into practice your ability to develop a functional project in a limited period of time.
->
-> It will be taken into account how you have organized the folder structure, the code, prioritized tasks, documentation, ...
->
-> It is advisable to use a language with which you already have experience since the final result of the delivery will be valued.
+## Available Scripts
 
-## ⏳ Time for development
+In the project directory, you can run:
 
-You will have **48 hours** from the delivery of the challenge to solve it.
+### `yarn start`
 
-## 🎯 Objective
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The **project** to be **developed** for this **challenge** will be a **Memes and Gifs** web page in which **users** can **upload their files** and **share** it with **everyone**.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## 🧱 General analysis
+### `yarn test`
 
-The **final purpose** is that **any user** can **visit** the web page and **share** the **content** uploaded by **registered users**.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-The **main functionalities** are detailed below:
+### `yarn build`
 
-- **Login** and **registration**
-- **Home page** that will show the **content uploaded** by users
-- **Main Navbar** that will include:
-  - **Content search bar**:
-    - You will have at least **three options** to filter the **main content**
-  - **Links** to the **main categories**
-  - **Information** of the **logged in user**
-    - If you are not logged in, the **button** to log in will be **displayed**
-- **Upload content page**
-  - If the user is logged in, a **multimedia resource** can be **uploaded** from their **computer** or from a an **external link**
-- **Page** of the **selected multimedia** element:
-  - The **user can obtain the link** of the **multimedia resource** to include it on any **website**
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## 🔑 Key requirements
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- Use at least **one third-party API**
-- Use at least **one third-party library**
-- Creation of your own **database** to **store** all the **information**
-- **Anyone can access the website** and **view** the **content** of other **users**, but only **previously registered** users **can upload multimedia content**
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## 💯 Extra
+### `yarn eject`
 
-The development of **additional features** to add more value to the **project** will be **valued positively**.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-## 🧪 Dependencies
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-You can use the **dependencies** that you **consider necessary** for the **development** of the **challenge**.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-## 🔧 Technologies
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-You can use the **technologies** that you **consider necessary** for the **development** of the **challenge**.
+## Learn More
 
-Keep in mind that the **final result** is **mainly valued**, so we **recommend** that you use **technologies** with which you have **previous experience developing**.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## 🔚 Delivery
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-The **challenge** must be sent to **academics@assemblerschool.com** and must contain a ".zip" file with the following content:
+### Code Splitting
 
-- Project repository
-- Documentation in PDF format
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
