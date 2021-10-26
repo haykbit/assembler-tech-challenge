@@ -1,20 +1,42 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { MdOutlineImageSearch } from "react-icons/md";
+
+import { logout } from "../../redux/auth/action";
+import { resetUserData } from "../../redux/user/action";
+
 import logo from "../../assets/icons/logo.png";
 import "./style/navbar.scss";
 
 function Navbar() {
   let history = useHistory();
-  const [loged, setLoged] = useState(false);
+  let dispatch = useDispatch();
 
-  const handleLogOut = () => {
-    history.push("/login");
+  const [loged, setLoged] = useState(null);
+
+  const userStorage = JSON.parse(localStorage.getItem("user"));
+  const access = useSelector((state) => state.auth.authObserverSuccess);
+
+  const { loading, accessToken, signOutSuccess, authObserverSuccess, user } =
+    useSelector((state) => state.auth);
+
+  const handleLogout = () => {
+    dispatch(logout());
+    dispatch(resetUserData());
   };
 
   const handleSingIn = () => {
-    history.push("/register");
+    history.push("/login");
   };
+
+  useEffect(() => {
+    if (!loading && authObserverSuccess) {
+      setLoged(true);
+      console.log(true);
+    }
+  }, [loading]);
+
   return (
     <>
       <div className="nav-container">
@@ -33,13 +55,13 @@ function Navbar() {
         </section>
         <section className="logout-button-container">
           {loged ? (
-            <button className="logout-button" onClick={() => handleLogOut()}>
+            <button className="logout-button" onClick={() => handleLogout()}>
               Log Out
             </button>
           ) : (
             <button
               className="logout-button-sing"
-              onClick={() => handleLogOut()}
+              onClick={() => handleSingIn()}
             >
               Sing In
             </button>

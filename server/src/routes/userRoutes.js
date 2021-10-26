@@ -6,11 +6,11 @@ const userRouter = Router();
 
 userRouter.post("/login", authMiddleware, userController.signIn);
 userRouter.get("/:id", authMiddleware, userController.getUserById);
-userRouter.get("/myMemes/:id", authMiddleware, userController.getMySongs);
+userRouter.get("/myMemes/:id", authMiddleware, userController.getMyMemes);
 userRouter.get(
   "/myFavoriteMemes/:id",
   authMiddleware,
-  userController.getMyFavoriteSongs
+  userController.getMyFavoriteMemes
 );
 
 module.exports = {

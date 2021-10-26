@@ -36,17 +36,6 @@ export async function updateUserProfile(id, profile, profileImage) {
   });
 }
 
-export async function getSearchMeme() {
-  const userToken = await getCurrentUserToken();
-  return axios({
-    method: "GET",
-    url: `${process.env.REACT_APP_API_BASE_URL}/users/memes`,
-    headers: {
-      Authorization: `Bearer ${userToken}`,
-    },
-  });
-}
-
 export async function likeMeme(memeId, userId) {
   const userToken = await getCurrentUserToken();
   return axios({
@@ -103,5 +92,25 @@ export async function getSearchMeme(userId) {
       Authorization: `Bearer ${userToken}`,
     },
     data: { userId },
+  });
+}
+
+export async function getApiMemes() {
+  const userToken = await getCurrentUserToken();
+  return axios({
+    method: "GET",
+    url: "https://api.imgflip.com/get_memes",
+  });
+}
+
+export async function uploadMemesData(meme) {
+  const userToken = await getCurrentUserToken();
+  return axios({
+    method: "POST",
+    url: `${process.env.REACT_APP_API_BASE_URL}/memes`,
+    data: { meme },
+    headers: {
+      Authorization: `Bearer ${userToken}`,
+    },
   });
 }

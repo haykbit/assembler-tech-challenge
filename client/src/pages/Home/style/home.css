@@ -6,4 +6,24 @@
 body {
   margin: 0;
 }
+
+.upload-container .upload-button {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #ff4079;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  -webkit-box-shadow: 2px 2px 3px #999;
+          box-shadow: 2px 2px 3px #999;
+  border: none;
+}
+
+.upload-container .upload-button:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
 /*# sourceMappingURL=home.css.map */

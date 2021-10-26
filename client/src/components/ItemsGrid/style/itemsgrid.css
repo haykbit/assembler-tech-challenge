@@ -6,6 +6,10 @@
   padding: 2%;
   border-radius: 6px;
   margin-bottom: 40px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .items-container .header .filter-header {
@@ -44,7 +48,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #f5f5f5;
   cursor: pointer;
 }
 
@@ -54,6 +57,15 @@
 
 .items-container .filters-container label input {
   cursor: pointer;
+  display: none;
+}
+
+.items-container .filters-container .memespop {
+  background-color: #ff89e1;
+}
+
+.items-container .filters-container .explore {
+  background-color: #8991ff;
 }
 
 @media (max-width: 346px) {
@@ -84,9 +96,10 @@
 }
 
 .items-container .list-grid .item img {
-  border-radius: 10px;
+  border-radius: 6px;
   width: 200px;
   height: 200px;
+  border: 3px #d3d3d3 solid;
 }
 
 .items-container .list-grid .item img:hover {

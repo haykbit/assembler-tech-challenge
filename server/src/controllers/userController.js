@@ -14,8 +14,7 @@ async function signIn(req, res, next) {
       email: email,
       firstName: req.body.user ? req.body.user.firstName : "",
       lastName: req.body.user ? req.body.user.lastName : "",
-      artist: req.body.user ? req.body.user.artist : "",
-      userName: req.body.user ? req.body.user.userName : "",
+      userName: req.body.user.firstName + req.body.user.lastName,
       profileImage: undefined,
     });
 
@@ -41,40 +40,33 @@ async function getUserById(req, res, next) {
   }
 }
 
-async function getMyFavoriteSongs(req, res, next) {
+async function getMyFavoriteMemes(req, res, next) {
   const { id: userId } = req.params;
   try {
     const user = await db.User.findOne({ firebase_id: userId });
-    const myFavSongs = user.myFavoriteSongs;
-    const songsData = await db.Song.find({
-      _id: { $in: myFavSongs },
-    });
-
-    const orderedSongs = myFavSongs.map((songId) => {
-      const orderedSong = songsData.filter(
-        (song) => song._id.toString() === songId.toString()
-      );
-      return orderedSong[0];
+    const myFavMemes = user.myFavoriteMemes;
+    const MemesData = await db.Meme.find({
+      _id: { $in: myFavMemes },
     });
 
     res.status(200).send({
-      data: orderedSongs,
+      data: orderedMemes,
     });
   } catch (error) {
     next(error);
   }
 }
 
-async function getMySongs(req, res, next) {
+async function getMyMemes(req, res, next) {
   const { id: userId } = req.params;
   try {
     const user = await db.User.findOne({ firebase_id: userId });
-    const mySongs = user.mySongs;
-    const mySongsData = await db.Song.find({
-      _id: { $in: mySongs },
+    const myMemes = user.myMemes;
+    const myMemesData = await db.Meme.find({
+      _id: { $in: myMemes },
     });
     res.status(200).send({
-      data: mySongsData,
+      data: myMemesData,
     });
   } catch (error) {
     next(error);
@@ -84,6 +76,6 @@ async function getMySongs(req, res, next) {
 module.exports = {
   signIn,
   getUserById,
-  getMyFavoriteSongs,
-  getMySongs,
+  getMyFavoriteMemes,
+  getMyMemes,
 };

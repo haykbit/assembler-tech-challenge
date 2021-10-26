@@ -1,5 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory, useLocation, Link } from "react-router-dom";
+
+import { login, loginWithEmailAndPassword } from "../../redux/auth/action";
+
 import image from "../../assets/images/shibadog.jpeg";
 import google from "../../assets/icons/google.png";
 import fondo from "../../assets/images/fondo.png";
@@ -7,15 +11,33 @@ import fondo from "../../assets/images/fondo.png";
 import "./style/logincomponent.scss";
 
 function LoginComponent() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
   const { email, password } = loginForm;
+
+  const { user, loading, authObserverSuccess } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (!loading && authObserverSuccess) {
+      history.push("/");
+    }
+  }, [loading]);
 
   const handleChange = (event) => {
     setLoginForm({ ...loginForm, [event.target.name]: event.target.value });
   };
-  const handleLoginWithGoogle = async () => {};
+  const handleLoginWithGoogle = async () => {
+    dispatch(login());
+  };
 
-  const handleLoginWithEmailAndPassword = (event) => {};
+  const handleLoginWithEmailAndPassword = (event) => {
+    event.preventDefault();
+    dispatch(loginWithEmailAndPassword(email, password));
+  };
 
   return (
     <div
@@ -27,7 +49,7 @@ function LoginComponent() {
       }}
     >
       <section className="login-form-container">
-        <form className="login-form">
+        <form className="login-form" onSubmit={handleLoginWithEmailAndPassword}>
           <h2>Hello! 👋</h2>
           <input
             placeholder="Email"
@@ -43,7 +65,9 @@ function LoginComponent() {
             onChange={handleChange}
           />
           <div className="button-center">
-            <button className="login-btn">Login</button>
+            <button className="login-btn" type="submit">
+              Login
+            </button>
           </div>
         </form>
 

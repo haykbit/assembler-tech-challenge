@@ -6,3 +6,23 @@
 body {
   margin: 0;
 }
+
+.upload-container {
+  .upload-button {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: rgb(255, 64, 121);
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    border: none;
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
