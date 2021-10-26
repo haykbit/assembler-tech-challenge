@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
-
+import { useHistory, useLocation } from "react-router-dom";
 import { MdOutlineImageSearch } from "react-icons/md";
 import logo from "../../assets/icons/logo.png";
 import "./style/navbar.scss";
 
 function Navbar() {
+  let history = useHistory();
+  const [loged, setLoged] = useState(false);
+
+  const handleLogOut = () => {
+    history.push("/login");
+  };
+
+  const handleSingIn = () => {
+    history.push("/register");
+  };
   return (
     <>
       <div className="nav-container">
@@ -22,10 +32,17 @@ function Navbar() {
           </form>
         </section>
         <section className="logout-button-container">
-          {true ? (
-            <button className="logout-button">Log Out</button>
+          {loged ? (
+            <button className="logout-button" onClick={() => handleLogOut()}>
+              Log Out
+            </button>
           ) : (
-            <button className="logout-button-sing">Sing In</button>
+            <button
+              className="logout-button-sing"
+              onClick={() => handleLogOut()}
+            >
+              Sing In
+            </button>
           )}
         </section>
       </div>

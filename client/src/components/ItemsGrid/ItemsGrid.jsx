@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { saveAs } from "file-saver";
 import MoonLoader from "react-spinners/MoonLoader";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import fondoHeader from "../../assets/images/fondo-header.png";
 import "./style/itemsgrid.scss";
@@ -10,6 +12,7 @@ function ItemsGrid() {
   const [list, setList] = useState(null);
   const [copy, setCopy] = useState(false);
   const [search, setSearch] = useState(null);
+  const notify = () => toast.dark("Link copied!📋");
 
   let listItems = [
     {
@@ -132,6 +135,7 @@ function ItemsGrid() {
 
   const handleCopy = (url) => {
     navigator.clipboard.writeText(url);
+    notify();
     setCopy(true);
   };
 
@@ -162,7 +166,7 @@ function ItemsGrid() {
       <div className="filters-container">
         <label className="realistic">
           Realistic
-          <input type="checkbox" />
+          <input type="checkbox" className="realistic-checkbox" />
           <span class="checkmark"></span>
         </label>
 
@@ -178,6 +182,7 @@ function ItemsGrid() {
           <span class="checkmark"></span>
         </label>
       </div>
+
       <section className="list-grid">
         {list ? (
           list.map((item) => {
@@ -197,6 +202,7 @@ function ItemsGrid() {
           <MoonLoader size="25" color="#000" margin="100px" css={override} />
         )}
       </section>
+      <ToastContainer position="top-right" autoClose={1500} hideProgressBar />
     </div>
   );
 }
