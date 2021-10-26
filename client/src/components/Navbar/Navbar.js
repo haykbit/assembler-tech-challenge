@@ -14,10 +14,6 @@ function Navbar() {
   let dispatch = useDispatch();
 
   const [loged, setLoged] = useState(null);
-
-  const userStorage = JSON.parse(localStorage.getItem("user"));
-  const access = useSelector((state) => state.auth.authObserverSuccess);
-
   const { loading, accessToken, signOutSuccess, authObserverSuccess, user } =
     useSelector((state) => state.auth);
 
