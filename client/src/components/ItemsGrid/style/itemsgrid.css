@@ -1,0 +1,100 @@
+.items-container {
+  padding: 5%;
+}
+
+.items-container .header {
+  padding: 2%;
+  border-radius: 6px;
+  margin-bottom: 40px;
+}
+
+.items-container .header .filter-header {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.658);
+  padding: 2%;
+  border-radius: 10px;
+}
+
+.items-container .header .filter-header h1 {
+  margin: 0;
+  color: #fff;
+}
+
+.items-container .filters-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.items-container .filters-container label {
+  padding: 10px;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-bottom: 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #252525;
+  cursor: pointer;
+}
+
+.items-container .filters-container label:hover {
+  outline: 2px solid #5213ff;
+}
+
+.items-container .filters-container label input {
+  cursor: pointer;
+}
+
+@media (max-width: 346px) {
+  .items-container .filters-container label {
+    font-size: 10px;
+  }
+}
+
+.items-container .list-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.items-container .list-grid .item {
+  margin-right: 30px;
+  margin-top: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.items-container .list-grid .item img {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.items-container .list-grid .item img:hover {
+  -webkit-box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
+}
+
+.items-container .list-grid .spinner {
+  margin-top: 10%;
+}
+/*# sourceMappingURL=itemsgrid.css.map */

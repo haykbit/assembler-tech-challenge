@@ -1,0 +1,104 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background-color: rgb(245, 245, 245);
+
+  .logo-icon {
+    margin-left: 20px;
+    width: 100%;
+
+    .logo-image {
+      width: 80px;
+      height: 50px;
+    }
+  }
+
+  .search-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+
+    .search-icon {
+      width: 30px;
+      height: 30px;
+      color: #000;
+    }
+
+    .search-form {
+      display: flex;
+
+      .input-search {
+        width: 250px;
+        margin-left: 10px;
+        height: 23px;
+        border: none;
+        padding: 5px;
+        outline: 2px solid #424242;
+        border-radius: 2px;
+
+        &:focus {
+          outline: 2px solid #9988fc;
+        }
+      }
+    }
+
+    @media (max-width: 474px) {
+      .search-form {
+        display: none;
+      }
+
+      .search-icon {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .logout-button-container {
+    width: 15%;
+    margin-right: 20px;
+    .logout-button {
+      width: 100%;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: 600;
+      background-color: rgb(124, 77, 255);
+      outline: 2px solid rgb(82, 19, 255);
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        border: 2px solid white;
+      }
+
+      &:focus {
+        outline: 2px solid rgb(82, 19, 255);
+      }
+    }
+
+    .logout-button-sing {
+      width: 100%;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: 600;
+      background-color: rgb(77, 255, 166);
+      outline: 2px solid rgb(0, 204, 102);
+      color: rgb(14, 14, 14);
+      cursor: pointer;
+
+      &:hover {
+        border: 2px solid rgb(255, 255, 255);
+      }
+
+      &:focus {
+        outline: 2px solid rgb(0, 204, 102);
+      }
+    }
+  }
+}

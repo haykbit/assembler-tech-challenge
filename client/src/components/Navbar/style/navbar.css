@@ -1,0 +1,119 @@
+.nav-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 80px;
+  background-color: whitesmoke;
+}
+
+.nav-container .logo-icon {
+  margin-left: 20px;
+  width: 100%;
+}
+
+.nav-container .logo-icon .logo-image {
+  width: 80px;
+  height: 50px;
+}
+
+.nav-container .search-bar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.nav-container .search-bar .search-icon {
+  width: 30px;
+  height: 30px;
+  color: #000;
+}
+
+.nav-container .search-bar .search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-container .search-bar .search-form .input-search {
+  width: 250px;
+  margin-left: 10px;
+  height: 23px;
+  border: none;
+  padding: 5px;
+  outline: 2px solid #424242;
+  border-radius: 2px;
+}
+
+.nav-container .search-bar .search-form .input-search:focus {
+  outline: 2px solid #9988fc;
+}
+
+@media (max-width: 474px) {
+  .nav-container .search-bar .search-form {
+    display: none;
+  }
+  .nav-container .search-bar .search-icon {
+    cursor: pointer;
+  }
+}
+
+.nav-container .logout-button-container {
+  width: 15%;
+  margin-right: 20px;
+}
+
+.nav-container .logout-button-container .logout-button {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: #7c4dff;
+  outline: 2px solid #5213ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-container .logout-button-container .logout-button:hover {
+  border: 2px solid white;
+}
+
+.nav-container .logout-button-container .logout-button:focus {
+  outline: 2px solid #5213ff;
+}
+
+.nav-container .logout-button-container .logout-button-sing {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: #4dffa6;
+  outline: 2px solid #00cc66;
+  color: #0e0e0e;
+  cursor: pointer;
+}
+
+.nav-container .logout-button-container .logout-button-sing:hover {
+  border: 2px solid white;
+}
+
+.nav-container .logout-button-container .logout-button-sing:focus {
+  outline: 2px solid #00cc66;
+}
+/*# sourceMappingURL=navbar.css.map */
