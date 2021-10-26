@@ -3,11 +3,13 @@ import { css } from "@emotion/react";
 import { saveAs } from "file-saver";
 import MoonLoader from "react-spinners/MoonLoader";
 
+import fondoHeader from "../../assets/images/fondo-header.png";
 import "./style/itemsgrid.scss";
 
 function ItemsGrid() {
   const [list, setList] = useState(null);
   const [copy, setCopy] = useState(false);
+  const [search, setSearch] = useState(null);
 
   let listItems = [
     {
@@ -139,29 +141,43 @@ function ItemsGrid() {
 
   return (
     <div className="items-container">
-      <section className="header">
-        <h1>Memes found for "Dancing"</h1>
-        <div className="filters-container">
-          <label className="realistic">
-            Realistic
-            <input type="checkbox" />
-            <span class="checkmark"></span>
-          </label>
-
-          <label className="drawing">
-            Drawing
-            <input type="checkbox" />
-            <span class="checkmark"></span>
-          </label>
-
-          <label className="colorfull">
-            Colorfull
-            <input type="checkbox" />
-            <span class="checkmark"></span>
-          </label>
-        </div>
+      <section
+        className="header"
+        style={{
+          backgroundImage: `url(${fondoHeader})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {search ? (
+          <div className="filter-header">
+            <h1>Memes found for "Dancing"</h1>{" "}
+          </div>
+        ) : (
+          <div className="filter-header">
+            <h1>All memes</h1>{" "}
+          </div>
+        )}
       </section>
+      <div className="filters-container">
+        <label className="realistic">
+          Realistic
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
 
+        <label className="drawing">
+          Drawing
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
+
+        <label className="colorfull">
+          Colorfull
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
+      </div>
       <section className="list-grid">
         {list ? (
           list.map((item) => {

@@ -2,34 +2,62 @@
   padding: 5%;
 }
 
-.items-container .header .filters-container {
+.items-container .header {
+  padding: 2%;
+  border-radius: 6px;
+  margin-bottom: 40px;
+}
+
+.items-container .header .filter-header {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.658);
+  padding: 2%;
+  border-radius: 10px;
+}
+
+.items-container .header .filter-header h1 {
+  margin: 0;
+  color: #fff;
+}
+
+.items-container .filters-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.items-container .header .filters-container label {
-  padding: 5px;
+.items-container .filters-container label {
+  padding: 10px;
   border-radius: 3px;
   margin-right: 10px;
+  margin-bottom: 50px;
   border: none;
   cursor: pointer;
-  background-color: #f1f1f1;
   font-weight: 500;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #252525;
+  cursor: pointer;
 }
 
-.items-container .header .filters-container label:hover {
-  background-color: #e9e9e9;
+.items-container .filters-container label:hover {
+  outline: 2px solid #5213ff;
+}
+
+.items-container .filters-container label input {
+  cursor: pointer;
 }
 
 @media (max-width: 346px) {
-  .items-container .header .filters-container label {
+  .items-container .filters-container label {
     font-size: 10px;
   }
 }
