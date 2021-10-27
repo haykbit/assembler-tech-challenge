@@ -19,10 +19,11 @@ function App() {
         position="top-center"
         toastStyle={{
           backgroundColor: "#171717",
+          marginTop: "20px",
           color: "#fff",
           fontSize: "12px",
         }}
-        autoClose={3000}
+        autoClose={2000}
         hideProgressBar
         newestOnTop={false}
         closeOnClick

@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import { uploadMemesData, removeMemeData, getApiMemes } from "../../api/api";
-
+import { uploadImages } from "../../services/cloudinary";
 import {
   POST_MEME_REQUEST,
   POST_MEME_SUCCESS,
@@ -13,10 +13,11 @@ import {
   DELETE_MEME_FAIL,
 } from "./types";
 
-export const uploadMemeFile = (meme, metadata) => async (dispatch) => {
+export const uploadMemeFile = (meme, title) => async (dispatch) => {
   dispatch({ type: POST_MEME_REQUEST });
   try {
-    let createdMeme = await uploadMemesData(meme);
+    const memeData = await uploadImages(meme);
+    let createdMeme = await uploadMemesData(memeData.url, title);
     const { _id, owner } = createdMeme.data.data;
     toast.info("Successfully Uploaded");
     dispatch({ type: POST_MEME_SUCCESS });

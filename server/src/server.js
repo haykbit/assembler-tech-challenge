@@ -5,7 +5,7 @@ const cors = require("cors");
 const { config } = require("./config");
 const app = express();
 
-const { userRouter } = require("./routes");
+const { userRouter, memeRouter } = require("./routes");
 
 app.use(helmet());
 app.use(json());
@@ -16,6 +16,7 @@ app.use(
 );
 
 app.use("/users", userRouter);
+app.use("/memes", memeRouter);
 
 app.get("/", (req, res) => {
   res.status(200).send({

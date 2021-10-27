@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { dispatchMemesData } from "../../redux/meme/action";
 
 import fondoHeader from "../../assets/images/fondo-header.png";
+import loginMeme from "../../assets/images/login-meme.png";
 import "./style/itemsgrid.scss";
 
 function ItemsGrid() {
@@ -22,8 +23,11 @@ function ItemsGrid() {
 
   const [copy, setCopy] = useState(false);
   const [loged, setLoged] = useState(null);
-  const [pageResult, setPageResult] = useState(true);
+  const [show, setShow] = useState(true);
+  const [hide, setHide] = useState(false);
   const notify = () => toast.dark("Link copied!📋");
+
+  const userStorage = JSON.parse(localStorage.getItem("user"));
 
   const { user, loading, authObserverSuccess } = useSelector(
     (state) => state.auth
@@ -39,11 +43,10 @@ function ItemsGrid() {
   }
 
   useEffect(() => {
-    if (!loading && authObserverSuccess) {
+    if (userStorage) {
       setLoged(true);
-      console.log(true);
     }
-  }, [loading]);
+  }, [loading, loged]);
 
   const downloadImage = (url, name) => {
     saveAs(url, name);
@@ -55,14 +58,25 @@ function ItemsGrid() {
     setCopy(true);
   };
 
-  const handleCheck = () => {
-    setPageResult(!pageResult);
+  const handleMemesPage = () => {
+    setShow(!hide);
+  };
+
+  const handleExplorePage = () => {
+    setShow(hide);
   };
 
   const override = css`
     margin-top: 100px;
   `;
 
+  const handleSingIn = () => {
+    history.push("/login");
+  };
+
+  const handleRegister = () => {
+    history.push("/register");
+  };
   return (
     <div className="items-container">
       <section
@@ -74,25 +88,25 @@ function ItemsGrid() {
         }}
       >
         <div className="filter-header">
-          <h1>All memes</h1>{" "}
+          {show ? <h1>All memes</h1> : <h1>Explore creator memes</h1>}
         </div>
       </section>
       <div className="filters-container">
         <label className="memespop">
           Memes pop
-          <input type="checkbox" onClick={() => handleCheck()} />
+          <input type="checkbox" onClick={() => handleMemesPage()} />
           <span className="checkmark"></span>
         </label>
 
         <label className="explore">
           Explore
-          <input type="checkbox" onClick={() => handleCheck()} />
+          <input type="checkbox" onClick={() => handleExplorePage()} />
           <span className="checkmark"></span>
         </label>
       </div>
 
       <section className="list-grid">
-        {pageResult ? (
+        {show ? (
           apiMemes ? (
             apiMemes.map((item, index) => {
               return (
@@ -115,22 +129,33 @@ function ItemsGrid() {
               css={override}
             />
           )
-        ) : apiMemes ? (
-          apiMemes.map((item, index) => {
-            return (
-              <>
-                <div className="item" key={index}>
-                  <img
-                    src={item.url}
-                    alt=""
-                    onClick={() => handleCopy(item.url)}
-                  />
-                </div>
-              </>
-            );
-          })
+        ) : loged ? (
+          <div>
+            <h1>🎈 Add some meme!</h1>
+          </div>
         ) : (
-          <MoonLoader size="25px" color="#000" margin="100px" css={override} />
+          <div className="explore-container">
+            <h1 style={{ width: "100%", textAlign: "center" }}>
+              🚧 Restricted area
+            </h1>
+            <div className="explore-buttons">
+              <button
+                onClick={() => handleSingIn()}
+                className="explore-login"
+                style={{ marginRight: "20px" }}
+              >
+                Login
+              </button>
+              <h2 style={{ margin: "0" }}>Or</h2>
+              <button
+                onClick={() => handleRegister()}
+                className="explore-register"
+                style={{ marginLeft: "20px" }}
+              >
+                Register
+              </button>
+            </div>
+          </div>
         )}
       </section>
     </div>

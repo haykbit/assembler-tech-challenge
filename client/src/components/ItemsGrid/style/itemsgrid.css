@@ -6,10 +6,6 @@
   padding: 2%;
   border-radius: 6px;
   margin-bottom: 40px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .items-container .header .filter-header {
@@ -40,7 +36,7 @@
   margin-bottom: 50px;
   border: none;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   color: #000;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -109,5 +105,76 @@
 
 .items-container .list-grid .spinner {
   margin-top: 10%;
+}
+
+.items-container .list-grid .explore-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.items-container .list-grid .explore-container h1 {
+  font-size: 45px;
+}
+
+.items-container .list-grid .explore-container .explore-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.items-container .list-grid .explore-container .explore-buttons button {
+  width: 220px;
+  height: 80px;
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.items-container .list-grid .explore-container .explore-buttons .explore-login {
+  border-radius: 5px;
+  border: none;
+  background-color: #4dffa6;
+  outline: 2px solid #00cc66;
+  color: #0e0e0e;
+  cursor: pointer;
+}
+
+.items-container .list-grid .explore-container .explore-buttons .explore-login:hover {
+  border: 2px solid white;
+}
+
+.items-container .list-grid .explore-container .explore-buttons .explore-login:focus {
+  outline: 2px solid #00cc66;
+}
+
+.items-container .list-grid .explore-container .explore-buttons .explore-register {
+  border-radius: 5px;
+  border: none;
+  background-color: #7c4dff;
+  outline: 2px solid #5213ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.items-container .list-grid .explore-container .explore-buttons .explore-register:hover {
+  border: 2px solid white;
+}
+
+.items-container .list-grid .explore-container .explore-buttons .explore-register:focus {
+  outline: 2px solid #5213ff;
 }
 /*# sourceMappingURL=itemsgrid.css.map */

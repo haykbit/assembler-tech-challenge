@@ -36,41 +36,6 @@ export async function updateUserProfile(id, profile, profileImage) {
   });
 }
 
-export async function likeMeme(memeId, userId) {
-  const userToken = await getCurrentUserToken();
-  return axios({
-    method: "PATCH",
-    url: `${process.env.REACT_APP_API_BASE_URL}/memes/like/${memeId}`,
-    data: { userId },
-    headers: {
-      Authorization: `Bearer ${userToken}`,
-    },
-  });
-}
-
-export async function cancelLikeMeme(memeId, userId) {
-  const userToken = await getCurrentUserToken();
-  return axios({
-    method: "PATCH",
-    url: `${process.env.REACT_APP_API_BASE_URL}/memes/cancel-like/${memeId}`,
-    data: { userId },
-    headers: {
-      Authorization: `Bearer ${userToken}`,
-    },
-  });
-}
-
-export async function getLikedMeme(id) {
-  const userToken = await getCurrentUserToken();
-  return axios({
-    method: "GET",
-    url: `${process.env.REACT_APP_API_BASE_URL}/users/myFavoriteMemes/${id}`,
-    headers: {
-      Authorization: `Bearer ${userToken}`,
-    },
-  });
-}
-
 export async function removeMemeData(id, userId) {
   const userToken = await getCurrentUserToken();
   return axios({
@@ -103,14 +68,26 @@ export async function getApiMemes() {
   });
 }
 
-export async function uploadMemesData(meme) {
+export async function uploadMemesData(meme, title) {
   const userToken = await getCurrentUserToken();
   return axios({
     method: "POST",
     url: `${process.env.REACT_APP_API_BASE_URL}/memes`,
-    data: { meme },
+    data: { meme, title },
     headers: {
       Authorization: `Bearer ${userToken}`,
     },
+  });
+}
+
+export async function getMemesData(userId) {
+  const userToken = await getCurrentUserToken();
+  return axios({
+    method: "GET",
+    url: `${process.env.REACT_APP_API_BASE_URL}/memes`,
+    headers: {
+      Authorization: `Bearer ${userToken}`,
+    },
+    data: { userId },
   });
 }

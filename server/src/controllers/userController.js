@@ -40,23 +40,6 @@ async function getUserById(req, res, next) {
   }
 }
 
-async function getMyFavoriteMemes(req, res, next) {
-  const { id: userId } = req.params;
-  try {
-    const user = await db.User.findOne({ firebase_id: userId });
-    const myFavMemes = user.myFavoriteMemes;
-    const MemesData = await db.Meme.find({
-      _id: { $in: myFavMemes },
-    });
-
-    res.status(200).send({
-      data: orderedMemes,
-    });
-  } catch (error) {
-    next(error);
-  }
-}
-
 async function getMyMemes(req, res, next) {
   const { id: userId } = req.params;
   try {
@@ -76,6 +59,5 @@ async function getMyMemes(req, res, next) {
 module.exports = {
   signIn,
   getUserById,
-  getMyFavoriteMemes,
   getMyMemes,
 };

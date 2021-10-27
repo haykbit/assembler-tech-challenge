@@ -17,9 +17,13 @@ function Navbar() {
   const { loading, accessToken, signOutSuccess, authObserverSuccess, user } =
     useSelector((state) => state.auth);
 
+  const userStorage = JSON.parse(localStorage.getItem("user"));
+
   const handleLogout = () => {
+    setLoged(false);
     dispatch(logout());
     dispatch(resetUserData());
+    window.location.href = "/";
   };
 
   const handleSingIn = () => {
@@ -27,11 +31,10 @@ function Navbar() {
   };
 
   useEffect(() => {
-    if (!loading && authObserverSuccess) {
+    if (userStorage) {
       setLoged(true);
-      console.log(true);
     }
-  }, [loading]);
+  }, []);
 
   return (
     <>

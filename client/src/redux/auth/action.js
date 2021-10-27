@@ -38,6 +38,7 @@ export const authObserverLoading = () => (dispatch) => {
         dispatch({ type: LOADING_OBSERVER_SUCCESS });
         return user;
       } else {
+        localStorage.removeItem("user");
         return null;
       }
     });
@@ -58,6 +59,7 @@ export const login = () => async (dispatch) => {
       uid: res.user.multiFactor.user.uid,
     };
 
+    localStorage.setItem("user", JSON.stringify(userProfile));
     await syncUserData(userProfile);
     dispatch({ type: LOGIN_SUCCESS, payload: accessToken });
     toast.success("You are successfully logged in");
@@ -107,8 +109,8 @@ export const loginWithEmailAndPassword =
         uid: user.data.data.firebase_id,
       };
 
+      localStorage.setItem("user", JSON.stringify(userProfile));
       const accessToken = res.user.multiFactor.user.accessToken;
-
       dispatch({ type: LOGIN_SUCCESS, payload: accessToken });
       dispatch({ type: LOAD_PROFILE, payload: userProfile });
       toast.success("You are successfully logged in");
@@ -120,6 +122,7 @@ export const loginWithEmailAndPassword =
   };
 
 export const logout = () => async (dispatch) => {
+  localStorage.removeItem("user");
   dispatch({ type: SIGN_OUT_SUCCESS });
   toast.success("You are successfully logged out");
   await signOut();

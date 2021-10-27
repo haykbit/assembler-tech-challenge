@@ -8,22 +8,96 @@ body {
 }
 
 .upload-container .upload-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   bottom: 40px;
   right: 40px;
-  background-color: #ff4079;
+  background-color: #8313eb;
   color: #fff;
   border-radius: 50px;
-  text-align: center;
   -webkit-box-shadow: 2px 2px 3px #999;
           box-shadow: 2px 2px 3px #999;
   border: none;
+  font-size: 50px;
+  cursor: pointer;
 }
 
 .upload-container .upload-button:active {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+.upload-container .input-upload {
+  display: none;
+}
+
+.upload-container .input-title {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  height: 150px;
+  bottom: 30px;
+  right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100 px;
+  background-color: #f3f3f3;
+  -webkit-box-shadow: 0px 6px 31px -8px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 6px 31px -8px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  padding: 2%;
+}
+
+.upload-container .input-title .close-icon-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.upload-container .input-title .close-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.upload-container .input-title .upload-section .upload-action {
+  border: none;
+  cursor: pointer;
+  background-color: #f3f3f3;
+}
+
+.upload-container .input-title .upload-section .upload-action .upload-icon-action {
+  width: 30px;
+  height: 30px;
+}
+
+.upload-container #title-input {
+  height: 40px;
+}
+
+.upload-container .prev-image {
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
 }
 /*# sourceMappingURL=home.css.map */
