@@ -46,7 +46,7 @@ const UserSchema = new Schema(
       default: [],
     },
     myFavoriteMemes: {
-      type: [{ type: Schema.Types.ObjectId, ref: "song" }],
+      type: [{ type: Schema.Types.ObjectId, ref: "meme" }],
       default: [],
     },
     auth_admin: {

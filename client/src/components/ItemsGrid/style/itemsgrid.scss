@@ -29,20 +29,27 @@
       margin-bottom: 50px;
       border: none;
       cursor: pointer;
-      font-weight: 500;
-      color: #fff;
+      font-weight: 600;
+      color: #000;
       display: flex;
       align-items: center;
-      background-color: rgb(37, 37, 37);
       cursor: pointer;
 
       &:hover {
-        outline: 2px solid rgb(82, 19, 255);
+        outline: 2px solid rgb(0, 0, 0);
       }
 
       input {
         cursor: pointer;
+        display: none;
       }
+    }
+    .memespop {
+      background-color: rgb(255, 137, 225);
+    }
+
+    .explore {
+      background-color: rgb(137, 145, 255);
     }
   }
 
@@ -67,9 +74,10 @@
       cursor: pointer;
 
       img {
-        border-radius: 10px;
+        border-radius: 6px;
         width: 200px;
         height: 200px;
+        border: 3px #d3d3d3 solid;
         &:hover {
           box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
         }
@@ -78,6 +86,63 @@
 
     .spinner {
       margin-top: 10%;
+    }
+
+    .explore-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-size: 45px;
+      }
+      .explore-buttons {
+        display: flex;
+        align-items: center;
+
+        button {
+          width: 220px;
+          height: 80px;
+          font-size: 30px;
+          cursor: pointer;
+          font-weight: 600;
+        }
+
+        .explore-login {
+          border-radius: 5px;
+          border: none;
+          background-color: rgb(77, 255, 166);
+          outline: 2px solid rgb(0, 204, 102);
+          color: rgb(14, 14, 14);
+          cursor: pointer;
+
+          &:hover {
+            border: 2px solid rgb(255, 255, 255);
+          }
+
+          &:focus {
+            outline: 2px solid rgb(0, 204, 102);
+          }
+        }
+
+        .explore-register {
+          border-radius: 5px;
+          border: none;
+          background-color: rgb(124, 77, 255);
+          outline: 2px solid rgb(82, 19, 255);
+          color: #fff;
+          cursor: pointer;
+
+          &:hover {
+            border: 2px solid white;
+          }
+
+          &:focus {
+            outline: 2px solid rgb(82, 19, 255);
+          }
+        }
+      }
     }
   }
 }

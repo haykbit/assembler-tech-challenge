@@ -1,6 +1,7 @@
 const { userRouter } = require("./userRoutes");
-//const { songRouter } = require("./memeRoutes");
+const { memeRouter } = require("./memeRoutes");
 
 module.exports = {
   userRouter,
+  memeRouter,
 };

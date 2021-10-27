@@ -1,0 +1,99 @@
+.register-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.register-container .register-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.884);
+  border-radius: 12px;
+  padding: 2%;
+  color: #fff;
+}
+
+.register-container .register-form-container h2 {
+  font-size: 40px;
+  margin: 0px 0px 20px 0px;
+}
+
+.register-container .register-form-container button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.register-container .register-form-container button:focus {
+  outline: 2px solid #9988fc;
+}
+
+.register-container .register-form-container .register-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.register-container .register-form-container .register-form input {
+  padding: 15px;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.register-container .register-form-container .register-form input:focus {
+  outline: 2px solid #9988fc;
+}
+
+.register-container .register-form-container .register-form .button-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.register-container .register-form-container .register-form .button-center .register-btn {
+  background-color: #5900ff;
+  color: #fff;
+  font-weight: 600;
+  width: 100%;
+}
+
+.register-container .register-form-container .register-center {
+  width: 100%;
+}
+
+.register-container .register-form-container .register-center .register-btn {
+  background-color: #00ffb3;
+  color: #141414;
+  font-weight: 600;
+  width: 100%;
+}
+/*# sourceMappingURL=registercomponent.css.map */
