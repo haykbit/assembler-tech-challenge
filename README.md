@@ -1,3 +1,7 @@
+**ADD .ENV**
+
+Add env file in /server
+
 **INSTALL DEPENDENCIES**
 
 ```
