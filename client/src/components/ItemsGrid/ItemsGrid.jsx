@@ -8,7 +8,10 @@ import MoonLoader from "react-spinners/MoonLoader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { dispatchMemesData } from "../../redux/meme/action";
+import {
+  dispatchMemesData,
+  dispatchExploreMemesData,
+} from "../../redux/meme/action";
 
 import fondoHeader from "../../assets/images/fondo-header.png";
 import loginMeme from "../../assets/images/login-meme.png";
@@ -34,12 +37,22 @@ function ItemsGrid() {
   );
 
   useEffect(() => {
+    if (!loading && authObserverSuccess) {
+      getExploreData();
+    }
     getData();
   }, []);
 
   async function getData() {
     const res = await dispatch(dispatchMemesData());
-    setApiMemes(res.meme.data.data.memes);
+    setApiMemes(res);
+    console.log(res);
+  }
+
+  async function getExploreData() {
+    const res = await dispatch(dispatchExploreMemesData());
+    setUserMemes(res);
+    console.log(res);
   }
 
   useEffect(() => {
@@ -130,6 +143,7 @@ function ItemsGrid() {
             />
           )
         ) : loged ? (
+          //HACER EL RENDER
           <div>
             <h1>🎈 Add some meme!</h1>
           </div>

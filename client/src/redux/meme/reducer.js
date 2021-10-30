@@ -7,6 +7,9 @@ import {
   GET_MEMES_REQUEST,
   GET_MEMES_SUCCESS,
   GET_MEMES_FAIL,
+  GET_EXPLORE_MEMES_REQUEST,
+  GET_EXPLORE_MEMES_SUCCESS,
+  GET_EXPLORE_MEMES_FAIL,
   DELETE_MEME_REQUEST,
   DELETE_MEME_SUCCESS,
   DELETE_MEME_FAIL,
@@ -56,6 +59,27 @@ const reducer = (state = INITIAL_STATE, action) => {
         getMemesSuccess: true,
       };
     case GET_MEMES_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+        getMemesSuccess: false,
+      };
+    case GET_EXPLORE_MEMES_REQUEST:
+      return {
+        ...state,
+        getMemesSuccess: false,
+        loading: true,
+        error: null,
+      };
+    case GET_EXPLORE_MEMES_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        getMemesSuccess: true,
+      };
+    case GET_EXPLORE_MEMES_FAIL:
       return {
         ...state,
         loading: false,

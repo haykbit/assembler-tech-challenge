@@ -1,5 +1,10 @@
 import { toast } from "react-toastify";
-import { uploadMemesData, removeMemeData, getApiMemes } from "../../api/api";
+import {
+  uploadMemesData,
+  removeMemeData,
+  getApiMemes,
+  getMemesData,
+} from "../../api/api";
 import { uploadImages } from "../../services/cloudinary";
 import {
   POST_MEME_REQUEST,
@@ -8,6 +13,9 @@ import {
   GET_MEMES_REQUEST,
   GET_MEMES_SUCCESS,
   GET_MEMES_FAIL,
+  GET_EXPLORE_MEMES_REQUEST,
+  GET_EXPLORE_MEMES_SUCCESS,
+  GET_EXPLORE_MEMES_FAIL,
   DELETE_MEME_REQUEST,
   DELETE_MEME_SUCCESS,
   DELETE_MEME_FAIL,
@@ -27,27 +35,27 @@ export const uploadMemeFile = (meme, title) => async (dispatch) => {
   }
 };
 
-export const deleteMeme = (memeId, userId) => async (dispatch) => {
-  dispatch({ type: DELETE_MEME_REQUEST });
-  try {
-    await removeMemeData(memeId, userId);
-    toast.info("Successfully Deleted");
-    dispatch({ type: DELETE_MEME_SUCCESS });
-  } catch (error) {
-    toast.error("Something went wrong! Try again");
-    dispatch({ type: DELETE_MEME_FAIL, payload: error.message });
-  }
-};
-
 export const dispatchMemesData = () => async (dispatch) => {
   dispatch({ type: GET_MEMES_REQUEST });
   try {
     const meme = await getApiMemes();
     dispatch({ type: GET_MEMES_SUCCESS });
-    const data = { meme };
-    return data;
+    return meme.data.data.memes;
   } catch (error) {
     toast.error("Something went wrong! Try again");
     dispatch({ type: GET_MEMES_FAIL, payload: error.message });
+  }
+};
+
+export const dispatchExploreMemesData = () => async (dispatch) => {
+  dispatch({ type: GET_EXPLORE_MEMES_REQUEST });
+  try {
+    const meme = await getMemesData();
+    console.log("ACTION: ", meme);
+    dispatch({ type: GET_EXPLORE_MEMES_SUCCESS });
+    return meme.data.data;
+  } catch (error) {
+    toast.error("Something went wrong! Try again");
+    dispatch({ type: GET_EXPLORE_MEMES_FAIL, payload: error.message });
   }
 };

@@ -80,14 +80,13 @@ export async function uploadMemesData(meme, title) {
   });
 }
 
-export async function getMemesData(userId) {
+export async function getMemesData() {
   const userToken = await getCurrentUserToken();
   return axios({
     method: "GET",
-    url: `${process.env.REACT_APP_API_BASE_URL}/memes`,
+    url: `${process.env.REACT_APP_API_BASE_URL}/memes/all/`,
     headers: {
       Authorization: `Bearer ${userToken}`,
     },
-    data: { userId },
   });
 }
